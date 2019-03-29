@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
+import { Fonts } from '../assets/utils/Fonts';
 
 class List extends Component {
   render() {
@@ -7,7 +8,7 @@ class List extends Component {
       <View style={styles.container}>
         <Image
           style={styles.img}
-          source={require("../img/cable-onda.png")}
+          source={require("../assets/img/cable-onda.png")}
         />
         <View style={styles.content}>
           <Text style={styles.title}>{this.props.title}</Text>
@@ -35,10 +36,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    color: "#505676"
+    color: "#505676",
+    fontFamily: Fonts.MontSerratBold
   },
   subtitle: {
-    color: "#9393b9"
+    color: "#9393b9",
+    fontFamily: Fonts.MontSerrat
   }
 });
 

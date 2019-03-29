@@ -2,6 +2,7 @@ import React, { Component} from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Search from "../components/Search";
 import ListItem from "../components/ListItem";
+import { Fonts } from '../assets/utils/Fonts';
 
 const list = [
   {
@@ -52,8 +53,8 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "#505676",
-    fontSize: 24,
-    fontWeight: "bold"
+    fontFamily: Fonts.MontSerratBold,
+    fontSize: 24
   }
 });
 

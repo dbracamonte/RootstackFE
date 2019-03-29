@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { Fonts } from "../assets/utils/Fonts";
 
 class Search extends Component {
 
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 40,
+    fontFamily: Fonts.MontSerrat,
     color: "#b1b1b9"
   },
   icon: {
