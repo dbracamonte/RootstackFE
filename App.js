@@ -1,49 +1,45 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import * as React from "react";
+import { Dimensions } from "react-native";
+import { TabView, SceneMap } from "react-native-tab-view";
+import Home from "./app/containers/Home";
+import Explore from "./app/containers/Explore";
+import Queues from "./app/containers/Queues";
+import Profile from "./app/containers/Profile";
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+const HomeRoute = () => <Home />;
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const ExploreRoute = () => <Explore />;
 
-type Props = {};
-export default class App extends Component<Props> {
+const QueuesRoute = () => <Queues />;
+
+const ProfileRoute = () => <Profile />;
+
+export default class TabViewExample extends React.Component {
+  state = {
+    index: 0,
+    routes: [
+      { key: "home", title: "Home" },
+      { key: "explore", title: "Explore" },
+      { key: "queues", title: "My Queues" },
+      { key: "profile", title: "Profile" }
+    ]
+  };
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <TabView
+        navigationState={this.state}
+        renderScene={SceneMap({
+          home: HomeRoute,
+          explore: ExploreRoute,
+          queues: QueuesRoute,
+          profile: ProfileRoute
+        })}
+        onIndexChange={index => this.setState({ index })}
+        initialLayout={{ width: Dimensions.get("window").width }}
+        tabBarPosition="bottom"
+      />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
