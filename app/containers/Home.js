@@ -6,19 +6,19 @@ import { Fonts } from '../assets/utils/Fonts';
 
 const list = [
   {
-    title: "Cable Onda - 1.2 Km",
-    subtitle: "Altaplaza Mall",
-    imgUrl: "/img/cable-onda.png"
+    title: "Cable Onda",
+    subtitle: "Altaplaza Mall - 1.2 Km",
+    imgUrl: require("../assets/img/cable-onda.png")
   },
   {
     title: "Cable Onda",
     subtitle: "El dorado - 2.2 Km",
-    imgUrl: "/img/cable-onda.png"
+    imgUrl: require("../assets/img/cable-onda.png")
   },
   {
     title: "Cable Wireless",
     subtitle: "El dorado - 2.2 Km",
-    imgUrl: "/img/cable-wireless.png"
+    imgUrl: require("../assets/img/cable-wireless.png")
   }
 ];
 
@@ -35,6 +35,7 @@ class Home extends Component {
               key={i}
               title={item.title}
               subtitle={item.subtitle}
+              imgUrl={item.imgUrl}
             />
           ))}
         </View>

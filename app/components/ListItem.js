@@ -8,7 +8,7 @@ class List extends Component {
       <View style={styles.container}>
         <Image
           style={styles.img}
-          source={require("../assets/img/cable-onda.png")}
+          source={this.props.imgUrl}
         />
         <View style={styles.content}>
           <Text style={styles.title}>{this.props.title}</Text>

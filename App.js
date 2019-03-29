@@ -36,8 +36,8 @@ export default class TabViewExample extends React.Component {
           profile: ProfileRoute
         })}
         onIndexChange={index => this.setState({ index })}
-        initialLayout={{ width: Dimensions.get("window").width }}
         tabBarPosition="bottom"
+        initialLayout={{ width: Dimensions.get("window").width }}
       />
     );
   }
